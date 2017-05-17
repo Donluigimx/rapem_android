@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:text="@string/titulo_final"
+        android:id="@+id/textView2"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:fontFamily="sans-serif"
+        android:textSize="20sp"
+        android:textColor="@color/black"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:indeterminate="false"
+        android:layout_marginTop="65dp"
+        android:progressDrawable="@drawable/circulo"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:max="100"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:gravity="center"
+        android:textSize="30sp"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Medium Text"
+        android:id="@+id/textView"
+        android:layout_marginTop="200dp"
+        android:layout_centerHorizontal="true" />
+
+    <ImageButton
+        android:id="@+id/c2"
+        android:layout_width="65dp"
+        android:layout_height="65dp"
+        android:background="#ffffff"
+        android:onClick="click"
+        android:scaleType="centerInside"
+        android:src="@drawable/control2"
+        android:layout_alignTop="@+id/c3"
+        android:layout_toStartOf="@+id/c3"
+        android:layout_toLeftOf="@+id/c3"
+        android:layout_marginEnd="3dp"
+        android:layout_marginRight="3dp"
+        android:contentDescription="@string/app_name" />
+
+    <ImageButton
+        android:id="@+id/c4"
+        android:layout_width="65dp"
+        android:layout_height="65dp"
+        android:background="@android:color/white"
+        android:onClick="click"
+        android:scaleType="centerInside"
+        app:srcCompat="@drawable/control4"
+        android:layout_marginLeft="3dp"
+        android:layout_marginStart="3dp"
+        android:layout_alignTop="@+id/c3"
+        android:layout_toEndOf="@+id/c3"
+        android:layout_toRightOf="@+id/c3"
+        android:contentDescription="@string/app_name" />
+
+    <ImageButton
+        android:id="@+id/c5"
+        android:layout_width="65dp"
+        android:layout_height="65dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignTop="@+id/c3"
+        android:layout_marginRight="8dp"
+        android:layout_marginEnd="8dp"
+        android:background="@android:color/white"
+        android:onClick="click"
+        android:scaleType="centerInside"
+        app:srcCompat="@drawable/control5"
+        android:contentDescription="@string/app_name" />
+
+    <ImageButton
+        android:id="@+id/c1"
+        android:layout_width="65dp"
+        android:layout_height="65dp"
+        android:background="#ffffff"
+        android:onClick="click"
+        android:scaleType="centerInside"
+        android:src="@drawable/control1"
+        android:layout_alignTop="@+id/c3"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="9dp"
+        android:layout_marginLeft="9dp"
+        android:layout_alignParentLeft="true"
+        android:contentDescription="@string/app_name" />
+
+    <ImageButton
+        android:id="@+id/c3"
+        android:layout_width="65dp"
+        android:layout_height="65dp"
+        android:background="@android:color/white"
+        android:onClick="click"
+        android:scaleType="centerInside"
+        app:srcCompat="@drawable/control3"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="19dp"
+        android:contentDescription="@string/app_name" />
+
+</RelativeLayout>

@@ -17,6 +17,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteException;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -409,13 +410,14 @@ public class MainActivity extends AppCompatActivity {
 
         SQLiteDatabase db = respuestaDbHelper.getReadableDatabase();
         int usuario_tem = id_usuario;
-        try (Cursor c = db.query(Respuesta.RespuestaEntry.TABLE_NAME, projection, null, null, null, null, null)){
+        try {
+            Cursor c = db.query(Respuesta.RespuestaEntry.TABLE_NAME, projection, null, null, null, null, null);
             while (c.moveToNext()) {
                 int id = c.getInt(c.getColumnIndexOrThrow(Respuesta.RespuestaEntry._ID));
                 int agradable = c.getInt(c.getColumnIndex(Respuesta.RespuestaEntry.COLUMN_NAME_AGRADABLE));
                 int dominio = c.getInt(c.getColumnIndex(Respuesta.RespuestaEntry.COLUMN_NAME_DOMINIO));
                 int reaccion = c.getInt(c.getColumnIndex(Respuesta.RespuestaEntry.COLUMN_NAME_REACCION));
-                id_usuario = c.getInt(c.getColumnIndex(Respuesta.RespuestaEntry.COLUMN_NAME_USUARIO));
+                //id_usuario = c.getInt(c.getColumnIndex(Respuesta.RespuestaEntry.COLUMN_NAME_USUARIO));//Esta linea está comentada porque tronaba la aplicacion y no se encontró utilidad
                 String palabra = c.getString(c.getColumnIndex(Respuesta.RespuestaEntry.COLUMN_NAME_PALABRA));
 
                 handleActionPostPalabra(palabra, agradable, reaccion, dominio);
@@ -429,6 +431,11 @@ public class MainActivity extends AppCompatActivity {
                 );
             }
         }
+        catch (SQLiteException e)
+        {
+
+        }
+
         id_usuario = usuario_tem;
     }
 
